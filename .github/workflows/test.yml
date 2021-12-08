@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: 
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: |
+             uname -a
+             date
+             node -v
+             npm -v
+             npm init -y
+             npm install express
+             git config --global user.name 'CI'
+             git config --global user.email 'test@gmail.com'
+             git add .
+             git checkout --orphan main
+             git commit -m 'hi mom!'
+             git push -f origin main
