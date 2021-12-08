@@ -17,8 +17,8 @@ jobs:
              npm -v
              npm init -y
              npm install express
-             git --global config user.name 'CI'
-             git --global config user.email 'test@gmail.com'
+             git config --global user.name 'CI'
+             git config --global user.email 'test@gmail.com'
              git add .
              git checkout --orphan main
              git commit -m 'hi mom!'
